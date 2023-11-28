@@ -1,0 +1,17 @@
+name: Set new SHA values
+
+on:
+  repository_dispatch:
+    types: [receive-sha]
+
+jobs:
+    echo-values:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Display Values
+          run: |
+            echo "version: ${{ github.event.client_payload.version }}"
+            echo "darwin_arm: ${{ github.event.client_payload.darwin_arm }}"
+            echo "darwin_amd: ${{ github.event.client_payload.darwin_amd }}"
+            echo "linux_arm: ${{ github.event.client_payload.linux_arm }}"
+            echo "linux_amd: ${{ github.event.client_payload.linux_amd }}"
