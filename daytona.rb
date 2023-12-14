@@ -1,7 +1,7 @@
 class Daytona < Formula
   desc "Daytona CLI"
   homepage "https://daytona.io"
-  version "8.67.0"
+  version "8.68.0"
 
   if OS.mac? && Hardware::CPU.arm?
   url "https://download.daytona.io/cli/v8.64.1/daytona-darwin-arm64"
