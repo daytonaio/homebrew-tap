@@ -20,9 +20,9 @@ jobs:
           version="${{ github.event.client_payload.version }}"
           echo "Received version: $version"
           bash scripts/update_sha.sh $version
-      - name: Commit $version
+      - name: Commit ${{ github.event.client_payload.version }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: 'daytona.rb'
           branch: main
-          commit_message: Automated file update to - $version
+          commit_message: Automated file update to - ${{ github.event.client_payload.version }}
