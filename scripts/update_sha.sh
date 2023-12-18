@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-version="$1"
+version="${1#v}"
 ruby_file="daytona.rb"
 
 # Detect operating system
@@ -42,7 +42,6 @@ for ((i = 0; i < ${#architectures[@]}; i++)); do
   curl -sL -o "$file_name" "${urls[$i]}"
   sha256=$(shasum -a 256 "$file_name" | awk '{print $1}')
   echo "$sha256"
-  #$sed_cmd -i.bak -E "/url .*$file_name/s/(sha256 \")(.*)(\")/\1$sha256\3/" "$ruby_file"
   $sed_cmd -i.bak -E "/url .*$file_name/{n; s/(sha256 \")(.*)(\")/\1${sha256}\3/}" "$ruby_file"
   rm "$file_name"
 done
