@@ -1,20 +1,20 @@
 class Daytona < Formula
   desc "Daytona CLI"
   homepage "https://daytona.io"
-  version "8.78.3"
+  version "8.78.4"
 
   if OS.mac? && Hardware::CPU.arm?
   url "https://download.daytona.io/cli/v#{version}/daytona-darwin-arm64"
-  sha256 "25f70c7175301594cff95747aa669483f683ca8513fec40813e6b37ed4a0b69c"
+  sha256 "7d183ef54df0c6e2889cca09c73de29f1f4b64fd935791b56f69e9af97761765"
   elsif OS.mac? && Hardware::CPU.intel?
   url "https://download.daytona.io/cli/v#{version}/daytona-darwin-amd64"
-  sha256 "0e9253fbf6abd2b9c5f486c12d5989b49c3c101514a390b1e1569878e69aba85"
+  sha256 "3147a2dcc455578f017a20b097fdd940e2aa1bb7b98dbbbc0b130014eed68c9a"
   elsif OS.linux? && Hardware::CPU.intel?
   url "https://download.daytona.io/cli/v#{version}/daytona-linux-amd64"
-  sha256 "abfac7e1e62cf0e8c22d8d931b9a6069e9fb3957798c5b9953507cd9e4734c5f"
+  sha256 "0ea0e9800027c35f92af3cac2a97d7e311fc91fb8d8fddf5976191614babfd8f"
   elsif OS.linux? && Hardware::CPU.arm?
   url "https://download.daytona.io/cli/v#{version}/daytona-linux-arm64"
-  sha256 "f9fb291a1cf409c0fdc31b19f7b0ca83dd7be2c7742b3e61cc13521218b0d7ca"
+  sha256 "764466a366bc091b8981a45f3549000b98c35986d50fb54246163fdad113bb93"
   else
     odie "Unsupported OS/ARCH combination"
   end
