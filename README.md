@@ -1,4 +1,4 @@
 # Daytona Homebrew Formula
 ```sh
-brew install daytonaio/daytona/daytona
+brew install daytonaio/tap/daytona
 ```
